@@ -89,22 +89,22 @@ class Customer extends BaseController
     }
     public function update($id)
     {
-        // if (!$this->validate([
-        //     'name' => [
-        //         'rules' => 'required'
-        //     ],
-        //     'email' => [
-        //         'rules' => 'required'
-        //     ],
-        //     'photo' => [
-        //         'rules' => 'uploaded[photo]',
-        //         'max_size[photo,1024]',
-        //         'is_image[photo]',
-        //         'mime_in[photo,image/jpg,image/jpeg,image/png]'
-        //     ],
-        // ])) {
-        //     return redirect()->to('/')->withInput();
-        // }
+        if (!$this->validate([
+            'name' => [
+                'rules' => 'required'
+            ],
+            'email' => [
+                'rules' => 'required'
+            ],
+            'photo' => [
+                'rules' => 'uploaded[photo]',
+                'max_size[photo,1024]',
+                'is_image[photo]',
+                'mime_in[photo,image/jpg,image/jpeg,image/png]'
+            ],
+        ])) {
+            return redirect()->to('/')->withInput();
+        }
         $file_photo = $this->request->getFile('photo');
         $file_photo->move('dist/img', $file_photo->getName());
 
