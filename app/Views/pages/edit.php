@@ -29,7 +29,7 @@
                                     <label for="photo">Photo</label>
                                     <div class="input-group">
                                         <div class="custom-file">
-                                            <input type="file" class="custom-file-input" id="photo" required>
+                                            <input type="file" class="custom-file-input" name="photo" id="photo" required>
                                             <label class="custom-file-label" for="photo">Choose file</label>
                                         </div>
                                         <!-- <div class="input-group-append">
